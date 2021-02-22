@@ -4,17 +4,17 @@ If you're unfamiliar with version control systems, especially Git, please consul
 
 ## Setting up your local environment
 1.	[Install JDK](https://www.oracle.com/java/technologies/javase-jdk15-downloads.html)  
-  a.	Please check whether or not the environment variables are set properly.
+  a.	Be sure to check that the environment variables are set properly.
 
 2.	[Install Spark](https://spark.apache.org/downloads.html)  
-  a.	Please install version 3.0.1 with Hadoop 2.7.  
-  b.	After the installation, you may need to set up the environment variables properly.  
-  c.	To test whether or not everything runs properly, open a terminal and type `spark-shell` to see if you can run it. Now that you are in the Scala interpreter, you can execute Scala code here. For example, you can try `println(“Hello World!”)`. You can exit the shell by typing `:q`.  
+  a.	Select version 3.0.1 with Hadoop 2.7.  
+  b.	After the installation, you may need to set the environment variables properly.  
+  c.	To test whether or not everything runs, open a terminal and type `spark-shell`. Now that you are in the Scala interpreter, you can execute Scala code here. For example, you can try `println(“Hello World!”)`. You can exit the shell by typing `:q`.  
   d.	Tip: In the Spark shell, you can test segments of Scala codes before you write them in the file. It's a very convenient way to learn Scala and Spark.   
   
 3.	[Install SBT](https://www.scala-sbt.org/download.html)  
   a.	SBT is a builder for Scala programs.  
-  b.	Check if the environment variables are set properly.  
+  b.	Check that the environment variables are set properly.  
   
 ## Cloning the project_1 repository
 This is a template repository. You can duplicate the repository, renaming it and adjusting your own settings, but cannot directly clone it and push to its **origin/main** branch. Create your own repository by selecting the green **Use this template** button. You'll be submitting the link to the respository you created (more on that later). Once you have your own repository, you can clone it to your local machine.
@@ -72,7 +72,7 @@ The key to mining Bitcoin is to solve a puzzle involving the SHA-256 hash functi
 
 Let's look at an example of the mining process to clarify. Say we hash the string `this_is_a_bitcoin_block` with the SHA-256 function, which produces `5de97c4b0b4fd55c033fb1de4723de24b8fea9c6caa09af43008e0412ee2847a`. Now, we set the nonce to 20 and prepend it to the string, giving us `20this_is_a_bitcoin_block`. The new string hashes to `0c6de9a1e7a6b958dfe13c7383d9a5d3029a702691dfe689adec21b06676710b`, thus solving the puzzle for `k = 1`. Subsequently, a value of 457 for the nonce solves the puzzle for `k = 2` since `457this_is_a_bitcoin_block` hashes to `004306ef8f43e38fb17bce7cb96e568ed904e334dafb3cd69568a27ac564e08c`.  
 
-Your task is to run **project_1** with Spark to determine the nonce for varying difficulties of `k` with one of the following strings:
+Your mission (and yes, you have to accept it) is to run **project_1** with Spark to determine the nonce for varying difficulties of `k` with one of the following strings:
 ```
 // If you're working in a pair
 this_is_a_bitcoin_block_of_yourEagleId1_and_yourEagleId2
@@ -94,3 +94,11 @@ spark-submit --class "project_1.main" --master "local[*]" target/scala-2.12/proj
 In GCP, simply include the argument string (e.g. `this_is_a_bitcoin_block_of_12345678 2 100`) in the **Arguments** field.  
 
 ## Reporting your findings
+You'll be submitting a report along with your code that provides commentary on the tasks below.  
+
+1. **(4 points)** Run the program on your local machine to solve cases `k = 2,3,4,5,6`. For each `k`, provide `xS`, its hash value, the total time elapsed, and the number of trials.  
+2. **(3 points)** Run the program on GCP to solve the case `k = 7`. Provide `xS`, its hash value, the total time elapsed, and the number of trials. Describe your cluster's configuration (number of machines, number/type of cores, etc.) and your process for estimating the number of trials needed in order to find the nonce.  
+3. **(3 points)** Modify **one** line of code in **src/main/scala/project_1/main.scala** so that the program generates the potential nonce from 1 to `n` (the number of trials) instead of randomly. Discuss whether or not this is more efficient than the randomized approach.
+
+## Submission via GitHub
+Delete your project's current **README.md** file (the one you're reading right now) and include your report as a new **README.md** file in the project root directory. Have no fear—the README with the project description is always available for reading in the template repository you created your repository from. For more information on READMEs, feel free to visit [this page](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-readmes) in the GitHub Docs. You'll be writing in [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown). Be sure that your repository is up to date and you have pushed all changes you've made to the project's code. When you're ready to submit, simply provide the link to your repository in the Canvas assignment's submission.
