@@ -91,7 +91,7 @@ spark-submit --class project_1.main --master local[*] target/scala-2.12/project_
 // Unix
 spark-submit --class "project_1.main" --master "local[*]" target/scala-2.12/project_1_2.12-1.0.jar this_is_a_bitcoin_block_of_12345678 2 100
 ```
-In GCP, simply include the arguments in the **Arguments** field.  
+In GCP, simply include the arguments in the **Arguments** field of the job you're submitting.  
 
 ## Reporting your findings
 You'll be submitting a report along with your code that provides commentary on the tasks below.  
