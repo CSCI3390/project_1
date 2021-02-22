@@ -1,4 +1,4 @@
-# Programming Project 1
+# Large Scale Data Processing: Project 1
 ## Understanding Git
 If you're unfamiliar with version control systems, especially Git, please consult the [Git Handbook](https://guides.github.com/introduction/git-handbook/) and some of the additional resources it provides.
 
