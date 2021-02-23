@@ -102,3 +102,15 @@ You'll be submitting a report along with your code that provides commentary on t
 
 ## Submission via GitHub
 Delete your project's current **README.md** file (the one you're reading right now) and include your report as a new **README.md** file in the project root directory. Have no fear—the README with the project description is always available for reading in the template repository you created your repository from. For more information on READMEs, feel free to visit [this page](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-readmes) in the GitHub Docs. You'll be writing in [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown). Be sure that your repository is up to date and you have pushed all changes you've made to the project's code. When you're ready to submit, simply provide the link to your repository in the Canvas assignment's submission.
+
+## You must do the following to receive full credit
+1. Create your report in the ``README.md`` and push it to your repo
+2. In the report you must include your full name and your partner's full name, in addition to collaborators
+3. Submit a link to your repo on the canvas assignment
+
+## Late Submission Penalties
+Beginning with the minute after the deadline, your submission will be docked a full letter grade (10%) for every 
+day that it is late. For example, if the assignment is due at 11:59 PM EST on Friday and you submit at 3:00 AM EST on Sunday,
+then you will be docked 20% and the max you could receive on that assignment is an 80%. 
+Late penalties are calculated from the last commit in the git log.
+**If you make a commit 48 hours after the deadline, you will receive a 0 -- Please do not do this, it messes up our grading.**
