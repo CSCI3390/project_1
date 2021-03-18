@@ -16,7 +16,6 @@ object main {
 
   def main(args: Array[String]) {
     val startTimeMillis = System.currentTimeMillis()
-
     if (args.length != 3) {
       println("Usage: project_1 string difficulty #trials")
       sys.exit(1)
@@ -55,9 +54,10 @@ object main {
 
     val nonce = sc.range(0, trials).mapPartitionsWithIndex((indx, iter) => {
       val rand = new scala.util.Random(indx + seed)
-      iter.map(x => rand.nextInt(Int.MaxValue - 1) + 1)
+      //iter.map(x => rand.nextInt(Int.MaxValue - 1) + 1)
+      iter.map(x => x + 1)
+       
     })
-
     val hash_result = nonce.map(x => (x.toString(), sha256Hash(x.toString() + header_1)))
 
     val ans = hash_result.filter({ case (x: String, y: String) => y.startsWith(zeroes_prefix) })
